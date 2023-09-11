@@ -18,13 +18,12 @@
     <div class="container mt-5">
         <main class="row">
             <div class="col-4 m-auto text-center">
-                <img center src="assets/img/wallpaper_colorido_639x390.jpg" width="100" height="50">
-                <h3>Acesso</h3>
-                <div>
-                    <a href="./login.php">Login</a>
+                <img src="assets/img/wallpaper_colorido_639x390.jpg" width="100" height="50" class="imagem_home">
+                <div style="margin: 20px; width: 400px;">
+                    <h3><a href="./login.php">Login</a></h3>
                 </div>
-                <div>
-                    <a href="./contato.php">Contato</a>
+                <div style="width: 500px;">
+                    <h3><a href="./contato.php">Contato</a></h3>
                 </div>
             </div>
         </main>
