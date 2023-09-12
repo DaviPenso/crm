@@ -6,13 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem = $_POST["mensagem"];
 
     // Configurar cabeçalhos para o email
-
     $headers = "From: davipenso@gmail.com" . "\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 
     // Enviar o email
-
-/*    if (mail($destinatario, $nome, $mensagem, $headers)) {
+    /*    if (mail($destinatario, $nome, $mensagem, $headers)) {
         echo "Email enviado com sucesso!";
     } else {
         echo "Falha ao enviar o email.";
@@ -20,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 /* Envio do Email */
-include './vendor/autoload.php';
+include '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -37,7 +35,7 @@ try {
     $mail->SMTPAuth   = true;
     $mail->Username   = 'noreply@sabercristao.com.br';
     $mail->Password   = 'Noreply159753@!';
-    
+
     //Recipients
     $mail->setFrom("noreply@sabercristao.com.br", "Saber Cristão | Não responda!!");
     $mail->addAddress("felipefcamp@gmail.com", "Felipe Campelo");
@@ -63,8 +61,3 @@ try {
 } catch (Exception $e) {
     echo "A mensagem não pôde ser enviada. Erro: {$mail->ErrorInfo}";
 }
-
-
-
-
-?>
