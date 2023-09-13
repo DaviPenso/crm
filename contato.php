@@ -28,6 +28,7 @@
                 <button class="btn btn-primary w-100 py-2 mt-4" type="submit">Enviar</button>
 
                 <input type="hidden" name="destinatario" id="destinatario" value="davipenso@gmail.com">
+                <input type="hidden" name="destinario-nome" id="destinario-nome" value="Davi Penso">
             </form>
 
             <div id="mensagem-resposta"></div>

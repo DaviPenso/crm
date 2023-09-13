@@ -2,26 +2,18 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destinatario = $_POST["destinatario"];
-    $assunto = $_POST["nome"];
+    $destinatarioNome = $_POST["destinario-nome"];
+    $nome = $_POST["nome"];
     $mensagem = $_POST["mensagem"];
-
-    // Configurar cabeçalhos para o email
-    $headers = "From: davipenso@gmail.com" . "\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
-
-    // Enviar o email
-    /*    if (mail($destinatario, $nome, $mensagem, $headers)) {
-        echo "Email enviado com sucesso!";
-    } else {
-        echo "Falha ao enviar o email.";
-    } */
+} else {
+    echo "Nao pode usar o metodo GET nesta requisicao";
+    exit;
 }
 
 /* Envio do Email */
 include '../vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer(true); // Instancia a classe e cria um objeto
@@ -36,10 +28,10 @@ try {
     $mail->Username   = 'noreply@sabercristao.com.br';
     $mail->Password   = 'Noreply159753@!';
 
-    //Recipients
+    // Recipients
     $mail->setFrom("noreply@sabercristao.com.br", "Saber Cristão | Não responda!!");
-    $mail->addAddress("felipefcamp@gmail.com", "Felipe Campelo");
-    $mail->addCC('felipefcampdev@gmail.com');
+    $mail->addAddress($destinatario, $destinatarioNome);
+    $mail->addCC('felipefcamp@gmail.com');
 
     //Content
     $dataHoje = date("d/m/Y") . " às " . date("H:i:s");
@@ -59,5 +51,5 @@ try {
     $mail->send();
     echo 'Mensagem enviada com sucesso!';
 } catch (Exception $e) {
-    echo "A mensagem não pôde ser enviada. Erro: {$mail->ErrorInfo}";
+    echo "A mensagem não pôde ser enviada. Erro PHPMailer: {$mail->ErrorInfo} - Erro PHP: {$e->getMessage()}";
 }

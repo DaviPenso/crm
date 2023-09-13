@@ -11,9 +11,11 @@ $(document).ready(function () {
             type: 'POST',
             data: $(this).serialize(),
             success: function (response) {
-                $('#mensagem-resposta').html(response);
+                // $('#mensagem-resposta').html(response);
+                console.log(response);
             }
         });
 
+        return false;
     });
 });
