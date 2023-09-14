@@ -12,10 +12,8 @@
 </head>
 
 <body style="background-color: #b0fffe">
-    <div class="panel panel-default mt-5" id="panel-title">
-        <div class="panel-body text-center">
-            <h3>CRM</h3>
-        </div>
+    <div class="mt-5 text-center">
+        <h3>CRM</h3>
     </div>
     <div class="container mt-5">
         <main class="row">

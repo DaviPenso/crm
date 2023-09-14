@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $mensagem = $_POST["mensagem"];
 } else {
-    echo "Nao pode usar o metodo GET nesta requisicao";
+    echo "O método exigido para esta requisição é POST!";
     exit;
 }
 

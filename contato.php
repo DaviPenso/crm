@@ -9,10 +9,8 @@
 </head>
 
 <body>
-    <div class="panel panel-default mt-5" id="panel-title">
-        <div class="panel-body text-center">
-            <h3>Fale Conosco</h3>
-        </div>
+    <div class="text-center mt-5">
+        <h3>Fale Conosco</h3>
     </div>
     <div class="container mt-5">
         <main>
