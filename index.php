@@ -17,12 +17,12 @@
     </div>
     <div class="container mt-5">
         <main class="row">
-            <div class="col-4 m-auto text-center">
+            <div class="col-4 m-auto text-center" style="box-sizing: border-box;">
                 <img src="assets/img/wallpaper_colorido_639x390.jpg" width="100" height="50" class="imagem_home">
-                <div style="margin: 20px; width: 400px;">
+                <div style="margin-top: 20px;">
                     <h3><a href="./login.php">Login</a></h3>
                 </div>
-                <div style="width: 500px;">
+                <div>
                     <h3><a href="./contato.php">Contato</a></h3>
                 </div>
             </div>

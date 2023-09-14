@@ -15,7 +15,7 @@
     <div class="mt-5 text-center">
         <h3>Login de Usuários</h3>
     </div>
-    <div class="container mt-5">
+    <div class="container mt-5 border">
         <main class="form-signin w-25 m-auto">
             <div class="card">
                 <div class="card-body">
