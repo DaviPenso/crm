@@ -1,13 +1,13 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $login = $_POST["login"];
+    $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    /* Verificando Usuario e Senha */
-    if ($login === "davipenso@gmail.com" && $senha === "123123!") {
+    /* Verificando Email e Senha */
+    if ($email === "davipenso@gmail.com" && $senha === "123123!") {
         echo "Login bem-sucedido!";
     } else {
-        echo "Login falhou. Verifique seu Usuário e senha e tente novamente.";
+        echo "Login falhou. Verifique seu Email e senha e tente novamente.";
     }
 }

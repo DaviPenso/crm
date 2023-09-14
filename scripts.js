@@ -18,12 +18,12 @@ $(document).ready(function () {
         return false;
     });
 
-    $('#login').on('submit' , function () {
+    $('#login-usuarios').on('submit' , function () {
         // const formData = $(this).serialize(); // Serializa os dados do formulário
      
             $.ajax({
-                type: 'POST',
                 url: './actions/login.php',
+                type: 'POST',
                 data: $(this).serialize(),
                 success: function (response) {
                     console.log(response);
