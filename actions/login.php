@@ -1,13 +1,60 @@
 <?php
 
+session_start();
+
+include "../MySQL.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
 
-    /* Verificando Email e Senha */
-    if ($email === "davipenso@gmail.com" && $senha === "123123!") {
-        echo "Login bem-sucedido!";
+    $vrfEmail = new MySQL([
+        "dbserver" => "localhost",
+        "username" => "root",
+        "password" => "",
+        "database" => "crm",
+    ]);
+    $vrfEmail->Query("SELECT * FROM usuarios WHERE email = '{$email}'");
+
+    if ($vrfEmail->RowCount() != false) {
+        $usuario = $vrfEmail->Row();
+
+        if (!password_verify($senha, $usuario->senha)) {
+            $response = [
+                "code" => 500,
+                "message" => "Login falhou. Verifique sua senha!"
+            ];
+            echo json_encode($response);
+            exit;
+        }
+
+        // OK, email existe e senha esta correta
+        $_SESSION['LOGADO'] = true;
+
+        unset($usuario->senha);
+        $_SESSION['USER'] = $usuario;
+        $response = [
+            "code" => 200,
+            "message" => "Login realizado com sucesso!",
+            "data" => [
+                "usuario" => $usuario
+            ]
+        ];
+        echo json_encode($response);
+        exit;
     } else {
-        echo "Login falhou. Verifique seu Email e senha e tente novamente.";
+        $response = [
+            "code" => 500,
+            "message" => "Login falhou. Verifique seu Email!"
+        ];
+        echo json_encode($response);
+        exit;
     }
+
+    /* Verificando Email e Senha */
+    // if ($email === "davipenso@gmail.com" && $senha === "123123!") {
+    //     echo "Login bem-sucedido!";
+    // } else {
+    //     echo "Login falhou. Verifique seu Email e senha e tente novamente.";
+    // }
 }
