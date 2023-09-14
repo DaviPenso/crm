@@ -19,8 +19,6 @@ $(document).ready(function () {
     });
 
     $('#login-usuarios').on('submit' , function () {
-        // const formData = $(this).serialize(); // Serializa os dados do formulário
-     
             $.ajax({
                 url: './actions/login.php',
                 type: 'POST',
