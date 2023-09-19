@@ -13,15 +13,6 @@ $(document).ready(function () {
         return false;
     });
 
-<<<<<<< HEAD
-    $('#login-usuarios').on('submit' , function () {
-            $.ajax({
-                url: './actions/login.php',
-                type: 'POST',
-                data: $(this).serialize(),
-                success: function (response) {
-                    console.log(response);
-=======
     $('#login-usuarios').on('submit', function () {
         $.ajax({
             url: './actions/login.php',
@@ -44,7 +35,6 @@ $(document).ready(function () {
                             Erro: ${info.message}
                         </div>
                     `);
->>>>>>> ff92b06c894ccdbd5b103326cf5091a7c62cfd8f
                 }
             }
         });

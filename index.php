@@ -11,7 +11,7 @@
         crossorigin="anonymous">
 </head>
 
-<body style="background-color: #b0fffe">
+<body>
     <div class="mt-5 text-center">
         <h3>CRM</h3>
     </div>
