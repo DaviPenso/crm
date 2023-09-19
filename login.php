@@ -23,11 +23,11 @@ session_start();
                     <form id="login-usuarios">
                         <div class="form-floating mb-1">
                             <input type="email" class="form-control" name="email" id="email" placeholder="Informe seu email">
-                            <label for="floatingInput">Email</label>
+                            <label for="email">Email</label>
                         </div>
                         <div class="form-floating">
                             <input type="password" class="form-control" name="senha" id="senha" placeholder="Senha">
-                            <label for="floatingPassword">Senha</label>
+                            <label for="senha">Senha</label>
                         </div>
 
                         <button class="btn btn-primary w-100 py-2 mt-4" type="submit">Acessar</button>
